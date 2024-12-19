@@ -1,0 +1,22 @@
+<div class="container login-container">
+  <h1>Post a Blog</h1>
+  <form (ngSubmit)="postBlog()">
+    <input [(ngModel)]="title"
+           name="title"
+           placeholder="Blog Title"
+           required />
+    <!--<textarea [(ngModel)]="content"
+              name="content"
+              placeholder="Blog Description">
+  </textarea>-->
+    <ckeditor [(ngModel)]="content" name="content"></ckeditor>
+    <!--<ckeditor editorUrl="https://cdn.ckeditor.com/4.20.1/full/ckeditor.js"
+            [(ngModel)]="content"
+            name="content"
+            type="divarea"
+            [config]="ckEditorConfig"></ckeditor>-->
+    <input type="file" (change)="onFileChange($event)" />
+    <button type="submit">Post Blog</button>
+  </form>
+  <div *ngIf="message" class="error-message">{{ message }}</div>
+</div>

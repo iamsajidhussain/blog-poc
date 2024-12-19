@@ -1,0 +1,15 @@
+<div class="container">
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div>
+      <a routerLink="/" class="nav-link">Home</a>
+      <a *ngIf="!isAuthenticated" routerLink="/login" class="nav-link">Login</a>
+      <a *ngIf="!isAuthenticated" routerLink="/register" class="nav-link">Register</a>
+      <a *ngIf="isAuthenticated" routerLink="/blog" class="nav-link">Create Blog</a>
+      <a *ngIf="isAuthenticated" (click)="logout()" class="nav-link">Logout</a>
+    </div>
+  </nav>
+
+  <!-- Router Outlet for Dynamic Content -->
+  <router-outlet></router-outlet>
+</div>

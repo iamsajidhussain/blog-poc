@@ -1,0 +1,18 @@
+<div class="container">
+  <!-- Back Button -->
+  <button class="back-button" (click)="goBack()">Back</button>
+
+  <!-- Blog Content -->
+  <div class="blog-detail">
+    <div class="blog-header">
+      <img [src]="blog?.image" alt="Featured Image" class="blog-image" />
+      <div class="blog-info">
+        <h2 class="blog-title">{{ blog?.title }}</h2>
+        <p class="blog-date">{{ blog?.date | date: 'medium' }}</p>
+      </div>
+    </div>
+    <div>
+      <div innerHtml="{{ blog?.content }}"></div>      
+    </div>
+  </div>
+</div>

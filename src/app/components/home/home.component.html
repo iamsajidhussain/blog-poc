@@ -1,0 +1,19 @@
+<div class="container home-container">
+  <!-- Blog Listing -->
+  <h1>Blogs</h1>
+  <div *ngIf="blogs.length === 0">
+    <p>No blogs posted yet.</p>
+  </div>
+  <div class="blog-list-container">
+  <div class="blog-item" *ngFor="let blog of blogs" (click)="goToBlogDetail(blog)">
+    <div class="blog-image">
+      <img [src]="blog.image" alt="Blog Image" />
+    </div>
+    <div class="blog-content">
+      <h3>{{ blog.title }}</h3>
+      <p class="blog-date">{{ blog.date | date: 'short' }}</p>
+      <p class="blog-description" innerHtml="{{ blog.content | slice: 0:150 }}"></p>
+    </div>
+  </div>
+</div>
+</div>
