@@ -6,7 +6,14 @@
       <a *ngIf="!isAuthenticated" routerLink="/login" class="nav-link">Login</a>
       <a *ngIf="!isAuthenticated" routerLink="/register" class="nav-link">Register</a>
       <a *ngIf="isAuthenticated" routerLink="/blog" class="nav-link">Create Blog</a>
-      <a *ngIf="isAuthenticated" (click)="logout()" class="nav-link">Logout</a>
+      <a *ngIf="isAuthenticated"
+         (click)="logout()"
+         (keydown.enter)="logout()"
+         (keydown.space)="logout()"
+         class="nav-link"
+         tabindex="0">
+        Logout
+      </a>
     </div>
   </nav>
 

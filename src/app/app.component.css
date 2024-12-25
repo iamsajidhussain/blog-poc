@@ -9,13 +9,13 @@
   margin-bottom: 20px;
 }
 
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    margin-right: 15px;
-    font-weight: bold;
-  }
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: bold;
+}
 
-    .navbar a:hover {
-      text-decoration: underline;
-    }
+.navbar a:hover {
+  text-decoration: underline;
+}

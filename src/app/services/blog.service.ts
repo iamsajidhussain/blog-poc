@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
+import { Blog } from '../models/blog.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BlogService {
   private readonly storageKey = 'blogs';
 
-  constructor() { }
-
-  addBlog(blog: any): void {
+  addBlog(blog: Blog): void {
     const blogs = this.getBlogs();
     blogs.push(blog);
     localStorage.setItem(this.storageKey, JSON.stringify(blogs));
   }
 
-  getBlogs(): any[] {
+  getBlogs(): Blog[] {
     const blogs = localStorage.getItem(this.storageKey);
     return blogs ? JSON.parse(blogs) : [];
   }

@@ -1,19 +1,16 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-blog-detail',
   templateUrl: './blog-detail.component.html',
-  styleUrl: './blog-detail.component.css'
+  styleUrl: './blog-detail.component.css',
 })
 export class BlogDetailComponent implements OnInit {
   blog: Blog | undefined;
 
-  constructor() { }
-
   ngOnInit(): void {
-    const navigation = window.history.state; 
-    if (navigation && navigation.blog) {
+    const navigation = window.history.state;
+    if (navigation?.blog) {
       this.blog = navigation.blog;
     }
   }
@@ -22,7 +19,6 @@ export class BlogDetailComponent implements OnInit {
     window.history.back();
   }
 }
-
 
 export interface Blog {
   title: string;

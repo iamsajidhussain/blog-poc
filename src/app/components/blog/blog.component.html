@@ -1,10 +1,7 @@
 <div class="container login-container">
   <h1>Post a Blog</h1>
   <form (ngSubmit)="postBlog()">
-    <input [(ngModel)]="title"
-           name="title"
-           placeholder="Blog Title"
-           required />
+    <input [(ngModel)]="title" name="title" placeholder="Blog Title" required />
     <!--<textarea [(ngModel)]="content"
               name="content"
               placeholder="Blog Description">
