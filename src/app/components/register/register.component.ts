@@ -5,18 +5,21 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrl: './register.component.css',
 })
 export class RegisterComponent {
-  username: string = '';
-  password: string = '';
-  confirmPassword: string = '';
-  usernameError: boolean = false;
-  passwordError: boolean = false;
-  passwordMismatch: boolean = false;
-  registrationError: string | null = null; 
+  username = '';
+  password = '';
+  confirmPassword = '';
+  usernameError = false;
+  passwordError = false;
+  passwordMismatch = false;
+  registrationError: string | null = null;
 
-  constructor(private readonly authService: AuthService, private readonly router: Router) { }
+  constructor(
+    private readonly authService: AuthService,
+    private readonly router: Router,
+  ) {}
 
   register(): void {
     this.usernameError = false;
@@ -44,7 +47,8 @@ export class RegisterComponent {
     if (isRegistered) {
       this.router.navigate(['/login']);
     } else {
-      this.registrationError = 'Username already exists. Please choose another one.';
+      this.registrationError =
+        'Username already exists. Please choose another one.';
     }
   }
 }

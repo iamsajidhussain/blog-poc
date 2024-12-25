@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { User } from '../models/user.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private readonly storageKey = 'users';
   private readonly currentUserKey = 'currentUser';
-  private authSubject = new BehaviorSubject<boolean>(this.isAuthenticated());
-  constructor() { }
-
+  private readonly authSubject = new BehaviorSubject<boolean>(this.isAuthenticated());
+  
   register(user: { username: string; password: string }): boolean {
     const users = this.getUsers();
     if (users.find((u) => u.username === user.username)) {
@@ -23,7 +23,7 @@ export class AuthService {
   login(username: string, password: string): boolean {
     const users = this.getUsers();
     const user = users.find(
-      (u) => u.username === username && u.password === password
+      (u) => u.username === username && u.password === password,
     );
     if (user) {
       localStorage.setItem(this.currentUserKey, JSON.stringify(user));
@@ -34,16 +34,16 @@ export class AuthService {
   }
 
   logout(): void {
-    this.authSubject.next(false);    
+    this.authSubject.next(false);
     localStorage.removeItem(this.currentUserKey);
   }
 
-  getCurrentUser(): any {
+  getCurrentUser(): User {
     const user = localStorage.getItem(this.currentUserKey);
     return user ? JSON.parse(user) : null;
   }
 
-  private getUsers(): any[] {
+  private getUsers(): User[] {
     const users = localStorage.getItem(this.storageKey);
     return users ? JSON.parse(users) : [];
   }

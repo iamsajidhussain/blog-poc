@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from '../../services/blog.service';
-import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { Blog } from '../../models/blog.model';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
-  blogs: any[] = [];
+  blogs: Blog[] = [];
   isAuthenticated = false;
 
-  constructor(private router: Router) {    
+  constructor(private readonly router: Router) {
     this.checkAuthentication();
   }
 
@@ -36,7 +35,7 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  goToBlogDetail(blog: any) {
+  goToBlogDetail(blog: Blog) {
     this.router.navigate(['/blog', blog.title], { state: { blog } });
   }
 }

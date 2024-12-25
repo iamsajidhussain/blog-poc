@@ -31,21 +31,6 @@
   text-align: left;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .blog-list-container {
   display: flex;
   flex-direction: column;
@@ -63,30 +48,30 @@
   transition: background-color 0.3s;
 }
 
-  .blog-item:hover {
-    background-color: #f1f1f1;
-  }
+.blog-item:hover {
+  background-color: #f1f1f1;
+}
 
 .blog-image {
   flex: 0 0 200px; /* Fixed width for image */
   margin-right: 15px;
 }
 
-  .blog-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
+.blog-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
 
 .blog-content {
   flex: 1;
 }
 
-  .blog-content h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.5rem;
-    color: #333;
-  }
+.blog-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  color: #333;
+}
 
 .blog-date {
   font-size: 0.9rem;

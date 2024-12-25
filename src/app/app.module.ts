@@ -19,7 +19,7 @@ import { CKEditorModule } from 'ckeditor4-angular';
     LoginComponent,
     BlogComponent,
     HomeComponent,
-    BlogDetailComponent
+    BlogDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,9 +27,9 @@ import { CKEditorModule } from 'ckeditor4-angular';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CKEditorModule
+    CKEditorModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

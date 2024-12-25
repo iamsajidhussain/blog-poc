@@ -1,27 +1,35 @@
 <div class="container login-container">
   <form (ngSubmit)="register()">
-    <h2 style="text-align: center; color: #007bff;">Register</h2>
+    <h2 style="text-align: center; color: #007bff">Register</h2>
 
-    <input type="text"
-           placeholder="Enter Username"
-           [(ngModel)]="username"
-           name="username"
-           required />
+    <input
+      type="text"
+      placeholder="Enter Username"
+      [(ngModel)]="username"
+      name="username"
+      required
+    />
     <div *ngIf="usernameError" class="error-message">Username is required</div>
 
-    <input type="password"
-           placeholder="Enter Password"
-           [(ngModel)]="password"
-           name="password"
-           required />
+    <input
+      type="password"
+      placeholder="Enter Password"
+      [(ngModel)]="password"
+      name="password"
+      required
+    />
     <div *ngIf="passwordError" class="error-message">Password is required</div>
 
-    <input type="password"
-           placeholder="Confirm Password"
-           [(ngModel)]="confirmPassword"
-           name="confirmPassword"
-           required />
-    <div *ngIf="passwordMismatch" class="error-message">Passwords do not match</div>
+    <input
+      type="password"
+      placeholder="Confirm Password"
+      [(ngModel)]="confirmPassword"
+      name="confirmPassword"
+      required
+    />
+    <div *ngIf="passwordMismatch" class="error-message">
+      Passwords do not match
+    </div>
 
     <button type="submit">Register</button>
   </form>
